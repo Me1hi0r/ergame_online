@@ -1,0 +1,38 @@
+{% extends 'engine/main.html' %}
+{% load static %}
+
+{% block content %}
+
+  <img id='pict' src="{{ picture }}">
+
+    <script>
+    $(document).ready(function() {
+      p = document.body.querySelector("#pict");
+      p.height = window.innerHeight;
+      p.width = window.innerWidth;
+    });
+  </script>
+{% endblock content %}
+
+{% block btn %}
+  <ul class="navbar-nav mx-auto">
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'laboratory' %}">
+              Laboratory
+          </a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'tv_v1' %}">
+              Watch video about Animals
+          </a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'tv_v2' %}">
+              Watch video about Mutations
+          </a>
+      </li>
+
+
+  </ul>
+{% endblock btn %}
+

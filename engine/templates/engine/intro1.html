@@ -1,0 +1,28 @@
+{% extends 'engine/main.html' %}
+{% load static %}
+
+{% block content %}
+    <script>
+    $(document).ready(function() {
+      var video = back_video('{{ video }}');
+      video.play();
+    });
+    </script>
+
+
+{% endblock content %}
+
+{% block btn %}
+  <ul class="navbar-nav mx-auto">
+     <li class="nav-item">
+        <a class="nav-link" onclick="play_pause()" href="#">
+          <i class="fa fa-play" aria-hidden="true"></i>
+        </a>
+     </li>
+     <li class="nav-item">
+        <a class="nav-link" href="{% url 'intro2' %}">
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+     </li>
+  </ul>
+{% endblock btn %}

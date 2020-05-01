@@ -1,0 +1,53 @@
+{% extends 'engine/main.html' %}
+{% load static %}
+
+{% block content %}
+
+  <img id='pict' src="{{ picture }}">
+
+    <script>
+    $(document).ready(function() {
+    start_timer();
+      p = document.body.querySelector("#pict");
+      p.height = window.innerHeight;
+      p.width = window.innerWidth;
+    });
+  </script>
+
+{% endblock content %}
+
+{% block btn %}
+  <ul class="navbar-nav mx-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'suites' %}">
+          Suites
+        </a>
+      </li>
+     <li class="nav-item">
+        <a class="nav-link" href="{% url 'tv' %}">
+          TV
+        </a>
+     </li>
+           <li class="nav-item">
+        <a class="nav-link" href="{% url 'table' %}">
+          Table
+        </a>
+     </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'probes' %}">
+          Probes
+        </a>
+     </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'reagents' %}">
+          Reagents
+        </a>
+     </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'laboratory3d' %}">
+          3D
+        </a>
+     </li>
+  </ul>
+
+{% endblock btn %}

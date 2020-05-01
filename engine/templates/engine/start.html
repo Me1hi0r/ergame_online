@@ -1,0 +1,19 @@
+{% extends 'engine/main.html' %}
+{% load static %}
+{% block content %}
+
+  <div class="start-container">
+    <h1 class="start-text">
+      {{ start_text }}
+    </h1>
+
+    <a href="{% url 'intro' %}" class="btn btn-outline-light" role="button" aria-pressed="true">TRY YOURSELF</a>
+    <button class="btn btn-outline-light" role="button" aria-pressed="true" onclick="document.body.querySelector('.start-text').innerText = 'rules'">RULES</button>
+  </div>
+
+  <script>
+      $(document).ready(function() {
+        back_video('{{ video }}', true).play();
+      });
+  </script>
+{% endblock content %}

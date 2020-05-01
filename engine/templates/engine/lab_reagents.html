@@ -1,0 +1,29 @@
+{% extends 'engine/main.html' %}
+{% load static %}
+
+{% block content %}
+
+  <img id='pict' src="{{ picture }}">
+
+    <script>
+    $(document).ready(function() {
+      p = document.body.querySelector("#pict");
+      p.height = window.innerHeight;
+      p.width = window.innerWidth;
+    });
+  </script>
+{% endblock content %}
+
+{% block btn %}
+  <ul class="navbar-nav mx-auto">
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'laboratory' %}">
+              Laboratory
+          </a>
+      </li>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Type help for hint" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Enter</button>
+      </form>
+  </ul>
+{% endblock btn %}
